@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid">
+            <!-- LEFT COLUMN: INFO -->
+            <div class="info-column">
+                <h1 class="reveal delay-1">Contact Us</h1>
+                <p class="reveal delay-2">
+                    Got a question or issues? Whether it's troubleshooting, feature requests or general feedback, we're
+                    here to help. Drop us a line and we'll respond as soon as possible.
+                </p>
+            </div>
+
+            <!-- RIGHT COLUMN: FORM -->
+            <div class="form-column reveal delay-3">
+                <div class="card">
+                    <!-- SUCCESS STATE (Hidden by default) -->
+                    <div id="successState" class="success-state hidden">
+                        <div class="success-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <h2>Message Sent!</h2>
+                        <p>Thank you for reaching out. We'll get back to you shortly.</p>
+                        <button type="button" id="resetBtn" class="reset-btn">Send another message</button>
+                    </div>
+
+                    <!-- FORM STATE -->
+                    <form id="contactForm" class="contact-form">
+                        <!-- Names Row -->
+                        <div class="form-row">
+                            <div class="form-group w-full">
+                                <label for="firstName">First Name <span class="inline-error hidden"
+                                        id="errFirstName">REQUIRED</span></label>
+                                <input type="text" id="firstName" name="firstName" placeholder="First Name"
+                                    class="input-base input-default">
+                            </div>
+                            <div class="form-group w-full">
+                                <label for="lastName">Last Name <span class="inline-error hidden"
+                                        id="errLastName">REQUIRED</span></label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Last Name"
+                                    class="input-base input-default">
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="contactEmail">Your Email <span class="inline-error hidden"
+                                    id="errEmail">REQUIRED</span></label>
+                            <input type="email" id="contactEmail" name="email" placeholder="example@gmail.com"
+                                class="input-base input-default">
+                        </div>
+
+                        <!-- Reason -->
+                        <div class="form-group">
+                            <label for="contactReason">Reason for contacting us: <span class="inline-error hidden"
+                                    id="errReason">REQUIRED</span></label>
+                            <div class="select-wrapper">
+                                <select id="contactReason" name="reason" class="input-base input-default unselected">
+                                    <option value="" disabled selected>Please select a reason...</option>
+                                    <option value="technical-support">Technical Support</option>
+                                    <option value="billing-issue">Billing Issue</option>
+                                    <option value="feature-request">Feature Request</option>
+                                    <option value="general-feedback">General Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="form-group">
+                            <label for="contactMessage">
+                                Please explain what you want to tell us:
+                                <span class="inline-error hidden" id="errMessageReq">REQUIRED</span>
+                                <span class="inline-error hidden" id="errMessageLimit">WORD LIMIT EXCEEDED</span>
+                            </label>
+                            <textarea id="contactMessage" name="message" rows="6" placeholder="Your message here..."
+                                class="input-base input-default resize-none"></textarea>
+                            <div class="word-counter" id="wordCounter">200 words remaining</div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" id="submitBtn" class="submit-btn" disabled>
+                            <span id="btnText">Send Message</span>
+                            <svg id="btnLoader" class="loader-icon hidden" xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="2" x2="12" y2="6"></line>
+                                <line x1="12" y1="18" x2="12" y2="22"></line>
+                                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                                <line x1="2" y1="12" x2="6" y2="12"></line>
+                                <line x1="18" y1="12" x2="22" y2="12"></line>
+                                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                                <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
